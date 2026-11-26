@@ -249,12 +249,11 @@ bench build --app project_management
 
 ## Screenshots
 
-### Portal Login
+
 
 ![Project Portal login](images/Screenshot%20from%202026-11-26%2015-50-28.png)
 
 ### Portal Views
-
 ![Portal project view](images/Screenshot%20from%202026-11-26%2015-50-40.png)
 
 ![Portal project information](images/Screenshot%20from%202026-11-26%2015-50-49.png)
@@ -263,7 +262,7 @@ bench build --app project_management
 
 ![Project workspace](images/Screenshot%20from%202026-11-26%2015-51-15.png)
 
-### Dashboard and Project Workflow
+
 
 <p align="center">
   <img src="images/Screenshot%20from%202026-11-26%2015-51-35.png" alt="Portal dashboard" width="48%">
