@@ -170,6 +170,22 @@ use_json_request_body = True
 # -----------
 # Permissions evaluated in scripted ways
 
+permission_query_conditions = {
+    "Project": "project_management.permissions.get_project_permission_query",
+    "Task": "project_management.permissions.get_task_permission_query",
+    "My Day Task": "project_management.permissions.get_my_day_task_permission_query",
+    "Time Log": "project_management.permissions.get_time_log_permission_query",
+    "Deliverable": "project_management.permissions.get_deliverable_permission_query",
+}
+
+has_permission = {
+    "Project": "project_management.permissions.has_project_permission",
+    "Task": "project_management.permissions.has_task_permission",
+    "My Day Task": "project_management.permissions.has_my_day_task_permission",
+    "Time Log": "project_management.permissions.has_time_log_permission",
+    "Deliverable": "project_management.permissions.has_deliverable_permission",
+}
+
 # permission_query_conditions = {
 # 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
@@ -305,3 +321,21 @@ require_type_annotated_api_methods = True
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+scheduler_events = {
+    "daily": [
+        "project_management.tasks.send_task_reminders"
+    ]
+}
+
+# Load the frontend on every path under /portal
+website_route_rules = [
+    {"from_route": "/portal/<path:app_path>", "to_route": "portal"},
+]
+
+doc_events = {
+    "Project": {
+        "after_insert": "project_management.raven_integration.sync_project_raven",
+        "on_update": "project_management.raven_integration.sync_project_raven",
+        "on_trash": "project_management.raven_integration.delete_project_raven_workspace"
+    }
+}
