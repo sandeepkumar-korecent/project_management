@@ -95,7 +95,6 @@ def get_project_discussion(project_name:str):
 
     messages = result.get("messages", [])
 
-    # Get message owners in one query
     users = set(
         message.get("owner")
         for message in messages
@@ -116,7 +115,6 @@ def get_project_discussion(project_name:str):
             for user in user_records
         }
 
-    # Add sender names to messages
     for message in messages:
         message["full_name"] = user_names.get(
             message.get("owner"),
@@ -138,7 +136,6 @@ def send_project_message(project_name : str, message : str):
     if not message:
         frappe.throw(_("Please enter a message."))
 
-    # Use Raven's own API to send the message
     result = send_message(
         channel_id=channel,
         text=message

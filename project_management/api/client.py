@@ -408,7 +408,6 @@ def get_comments(reference_doctype, reference_name):
     else:
         frappe.throw(_("Invalid document type."))
 
-    # Check whether the client has access to this project.
     projects = get_client_projects(user)
 
     allowed_project_names = [
@@ -437,7 +436,6 @@ def get_comments(reference_doctype, reference_name):
         order_by="creation asc"
     )
 
-    # Get the display name of each commenter.
     for comment in comments:
         comment["full_name"] = frappe.db.get_value(
             "User",
@@ -498,4 +496,3 @@ def add_comment(reference_doctype, reference_name, content):
         "success": True,
         "message": _("Comment added successfully.")
     }
-
