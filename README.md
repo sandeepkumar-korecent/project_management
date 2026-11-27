@@ -263,7 +263,6 @@ bench build --app project_management
 ![Project workspace](images/Screenshot%20from%202026-11-26%2015-51-15.png)
 
 
-
 <p align="center">
   <img src="images/Screenshot%20from%202026-11-26%2015-51-35.png" alt="Portal dashboard" width="48%">
   <img src="images/Screenshot%20from%202026-11-26%2015-51-45.png" alt="Project overview" width="48%">
@@ -283,6 +282,12 @@ bench build --app project_management
 - Keep client and vendor discussions in separate Raven channels
 - Do not commit passwords, API keys, CSRF tokens, or private session cookies
 - Review screenshots before sharing them so they do not contain sensitive company or user data
+
+
+Screen Recording
+<p>https://drive.google.com/file/d/15ydyFgWSfoWif182BYJ_apB-RVSAdZDv/view?usp=drive_link</p>
+
+
 
 ## License
 
